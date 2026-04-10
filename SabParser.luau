@@ -108,7 +108,7 @@ Synchronizer:WaitAndCall(player, function(playerData)
         end
     end
 
-    writefile("SavedParse.json", game:GetService("HttpService"):JSONEncode(result))
+    writefile(string.format("SavedParse_%s.json", player.Name), game:GetService("HttpService"):JSONEncode(result))
 
     if config.KickAfterParse then
         player:Kick("Парсинг завершён. Результат сохранен в SavedParse.json | Брейнротов найдено: "..tostring(#result))
